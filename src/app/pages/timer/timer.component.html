@@ -1,6 +1,6 @@
 <div class="h-full flex flex-col justify-center items-center gap-8">
   <h1 class="font-mono text-8xl font-bold text-gray-600">
-    {{ "25:00" }}
+    {{ countDownString }}
   </h1>
   <app-button text="Start" *ngIf="!counting" fontSize="lg"></app-button>
   <app-button text="Stop" *ngIf="counting" fontSize="lg"></app-button>

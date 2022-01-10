@@ -1,27 +1,42 @@
-import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { catchError, finalize, pipe, throwError } from 'rxjs';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { finalize, Subscription } from 'rxjs';
+import { AppStoreProviderService } from 'src/app/utils/AppStoreProvider.service';
 @Component({
   selector: 'app-settings',
   templateUrl: './settings.component.html',
   styleUrls: ['./settings.component.css'],
 })
-export class SettingsComponent implements OnInit {
+export class SettingsComponent implements OnInit, OnDestroy {
+  subscription: Subscription;
   duration = 25;
   loading = false;
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private appStore: AppStoreProviderService
+  ) {
+    this.subscription = appStore
+      .getDuration()
+      .subscribe((duration) => (this.duration = duration));
+  }
+  ngOnDestroy(): void {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
+  }
 
   ngOnInit(): void {}
 
   applyChange(event: SubmitEvent): void {
     event.preventDefault();
-    console.log(this.duration);
+    this.appStore.setDuration(this.duration);
   }
 
   durationChange(event: Event) {
     const target = event.target as HTMLInputElement;
-    console.log(target.value);
+
+    this.duration = parseInt(target.value);
   }
 
   applyRandomDuration(_: MouseEvent) {
