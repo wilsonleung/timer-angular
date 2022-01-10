@@ -9,6 +9,7 @@ import { catchError, finalize, pipe, throwError } from 'rxjs';
 export class SettingsComponent implements OnInit {
   duration = 25;
   loading = false;
+
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {}
