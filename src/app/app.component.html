@@ -10,8 +10,16 @@
     <router-outlet class="hidden"></router-outlet>
 
     <div class="flex flex-row gap-2">
-      <div>Timer</div>
-      <div>Settings</div>
+      <app-anchor
+        [selected]="selectedTarget === 'timer'"
+        (click)="pageChangeHandler('timer')"
+        >Timer</app-anchor
+      >
+      <app-anchor
+        [selected]="selectedTarget === 'settings'"
+        (click)="pageChangeHandler('settings')"
+        >Settings</app-anchor
+      >
     </div>
   </div>
 </div>

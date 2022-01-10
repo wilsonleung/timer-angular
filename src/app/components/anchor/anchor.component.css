@@ -1,0 +1,8 @@
+:host {
+  flex-grow: 1;
+  @apply text-center;
+}
+
+.selected {
+  @apply border-b-2 border-cyan-400;
+}
