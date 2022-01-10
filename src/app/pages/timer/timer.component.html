@@ -2,6 +2,24 @@
   <h1 class="font-mono text-8xl font-bold text-gray-600">
     {{ countDownString }}
   </h1>
-  <app-button text="Start" *ngIf="!counting" fontSize="lg"></app-button>
-  <app-button text="Stop" *ngIf="counting" fontSize="lg"></app-button>
+  <app-button
+    text="Start"
+    *ngIf="!counting"
+    fontSize="lg"
+    (click)="startCountDown()"
+  ></app-button>
+  <app-button
+    text="Stop"
+    *ngIf="counting"
+    fontSize="lg"
+    (click)="stopCountDown()"
+  ></app-button>
 </div>
+
+<app-modal *ngIf="showMsg" (click)="closeMsg()">
+  <div
+    class="text-4xl font-bold bg-red-400 text-white p-5 rounded-lg shadow-lg"
+  >
+    Take a break 🎉
+  </div>
+</app-modal>
