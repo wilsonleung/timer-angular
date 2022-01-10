@@ -4,11 +4,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ComponentsModule } from './components/components.module';
 import { TimerComponent } from './pages/timer/timer.component';
-import { SettingsModule } from './pages/settings/settings.module';
 
 @NgModule({
   declarations: [AppComponent, TimerComponent],
-  imports: [BrowserModule, AppRoutingModule, ComponentsModule, SettingsModule],
+  imports: [BrowserModule, AppRoutingModule, ComponentsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
