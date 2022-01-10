@@ -6,7 +6,8 @@
       🍅 Tomato Timer
     </header>
 
-    <router-outlet></router-outlet>
+    <!-- need to explicitly hide the outlet component, else it will takeup dom node -->
+    <router-outlet class="hidden"></router-outlet>
 
     <div class="flex flex-row gap-2">
       <div>Timer</div>
