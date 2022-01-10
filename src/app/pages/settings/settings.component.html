@@ -1,0 +1,33 @@
+<form
+  name="settings"
+  class="h-full flex flex-col items-center gap-8 mt-6"
+  onSubmit="{applyChangeHandler}"
+>
+  <h1 class="font-bold text-2xl text-gray-600 w-full text-left">Settings</h1>
+
+  <div class="flex flex-row justify-content w-full">
+    <label
+      htmlFor="duration"
+      class="text-left w-full font-bold text-gray-600 text-lg"
+    >
+      Duration : 25 mins
+    </label>
+    <Button>Random</Button>
+  </div>
+
+  <input
+    id="duration"
+    name="duration"
+    type="range"
+    class="w-full accent-cyan-400"
+    min="{1}"
+    max="{60}"
+    step="{1}"
+    value="{duration}"
+    onChange="{durationChangeHandler}"
+  />
+
+  <Button type="submit" text="Apply" color="primary" class="w-full text-2xl"
+    >Apply</Button
+  >
+</form>
