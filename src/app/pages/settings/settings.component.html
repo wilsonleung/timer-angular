@@ -12,7 +12,11 @@
     >
       Duration : 25 mins
     </label>
-    <Button>Random</Button>
+    <app-button
+      text="Random"
+      color="secondary"
+      [fullWidth]="false"
+    ></app-button>
   </div>
 
   <input
@@ -27,7 +31,10 @@
     onChange="{durationChangeHandler}"
   />
 
-  <Button type="submit" text="Apply" color="primary" class="w-full text-2xl"
-    >Apply</Button
-  >
+  <app-button
+    text="Apply"
+    color="primary"
+    fontSize="lg"
+    type="submit"
+  ></app-button>
 </form>

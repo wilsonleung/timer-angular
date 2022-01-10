@@ -1,0 +1,26 @@
+:host {
+  width: 100%;
+}
+
+.btn {
+  @apply text-white text-sm leading-6 font-medium py-2 px-3 rounded-lg w-full;
+}
+.primary {
+  @apply bg-cyan-400 hover:bg-cyan-500 active:bg-cyan-300;
+}
+
+.secondary {
+  @apply bg-neutral-400 hover:bg-neutral-500 active:bg-neutral-300;
+}
+
+.fontSizeLg {
+  @apply text-2xl;
+}
+
+.fontSizeMd {
+  @apply text-lg;
+}
+
+.fontSizeSm {
+  @apply text-sm;
+}

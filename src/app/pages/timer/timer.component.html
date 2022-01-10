@@ -2,19 +2,6 @@
   <h1 class="font-mono text-8xl font-bold text-gray-600">
     {{ "25:00" }}
   </h1>
-  <!-- {counting ? (
-    <Button
-      text="Stop"
-      color="secondary"
-      class="w-full text-2xl"
-      onClick={stopCountdownHandler}
-    ></Button>
-  ) : (
-    <Button
-      text="Start"
-      color="primary"
-      class="w-full text-2xl"
-      onClick={startCountdownHandler}
-    ></Button>
-  )} -->
+  <app-button text="Start" *ngIf="!counting" fontSize="lg"></app-button>
+  <app-button text="Stop" *ngIf="counting" fontSize="lg"></app-button>
 </div>
