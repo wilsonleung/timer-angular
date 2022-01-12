@@ -10,6 +10,7 @@ The purpose of this project is demonstrate how Angular supports some key feature
 - reaction to data change
 - client side state
 - component styling
+- lazy loading
 
 You can compare the same application features implemented with [React](https://github.com/wilsonleung/timer-react)
 
